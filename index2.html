@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Famous Saying 2</title>
+	
+	<style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,800&family=Roboto+Mono:wght@400;700&display=swap');
+
+		body{margin: 0; cursor: none;}
+		a{text-decoration: none; color:#ffffff;}
+		.cursor {
+	      width: 8rem;
+	      height: 8rem;
+	      border: 2px solid var(--color-texta);
+	      border-radius: 50%;
+	      position: absolute;
+	      z-index: 1000;
+	      transform: translate(-50%, -50%);
+	      pointer-events: none;
+	      transition: all 0.3s ease;
+	      transition-property: background, transform;
+	      transform-origin: 100% 100%;
+ 		  backdrop-filter: brightness(1.2) blur(2px);
+	      background-size: cover;
+	  		}
+	
+
+		.container{position: relative; width: 100vw; height: 100vh;}
+		.BG{position: absolute; width: 100vw; height: 100vh; z-index: -9999; }
+		.title{height: 20vw; transform: translate(-50%,-50%);
+                        position: absolute; left: 50%; top: 50%;
+                        display: flex; z-index: -9998;}
+		.titleImg{transform: translate(-50%. -50%); }
+		.word1{position: absolute; top: 32vh; left: 3vw; width: 4.5vw; height: 7vh;}
+		.word2{position: absolute; top: 10vh; left: 25vw; width: 6vw; height: 7vh;}
+		.word3{position: absolute; top: 25vh; left: 75vw; width: 9vw; height: 7vh;}
+		.word4{position: absolute; top: 69vh; left: 70vw; width: 5.5vw; height: 7vh;}
+		.word5{position: absolute; top: 23vh; left: 55vw; width: 7vw; height: 7vh;}
+		.word6{position: absolute; top: 35vh; left: 30vw; width: 5.7vw; height: 7vh;}
+		.word7{position: absolute; top: 65vh; left: 18vw; width: 7.3vw; height: 7vh;}
+		.word8{position: absolute; top: 69vh; left: 45vw; width: 5.3vw; height: 7vh;}
+		.word9{position: absolute; top: 13vh; left: 8vw; width: 9vw; height: 7vh;}
+
+		.keyword{transform: translate(-50%. -50%); position: absolute; color: #ffffff; margin:0; font-family: 'Roboto Mono', monospace; font-weight: 700; font-size: 20px;}
+		.twingkleImg-a{transform: translate(50%. -50%); position: absolute; margin:0; bottom: 0; right: 0; width: 2vw;}
+		.twingkleImg-b{transform: translate(50%. -50%); position: absolute; margin:0; bottom: 0; right: 0; opacity: 0; width: 2vw;}
+/*
+		.scroll{height: 3vw; transform: translate(-50%,-50%);
+                        position: absolute; left: 50%; bottom: 0;
+                        display: flex;}*/
+
+        .nextpage{position: fixed; font-family: 'Playfair Display', serif; font-size: 30px; border: 0; outline: 0; background-color: transparent; left: 50%; transform: translate(-50%); bottom: 5vh; font-style: italic; font-weight: 400;
+		 color: #000000; z-index: 9999;}
+
+
+        .box1{position: absolute; top: 39vh; left: 7.5vw; width: 200px; height: 300px; opacity: 0; }
+        .box2{position: absolute; top: 17vh; left: 31vw; width: 200px; height: 300px; opacity: 0;}
+        .box3{position: absolute; top: 32vh; left: 84vw; width: 200px; height: 300px; opacity: 0;}
+        .box4{position: absolute; top: 76vh; left: 75.5vw; width: 200px; height: 300px; opacity: 0;}
+        .box5{position: absolute; top: 34vh; left: 62vw; width: 200px; height: 300px; opacity: 0;}
+        .box6{position: absolute; top: 42vh; left: 35.7vw; width: 200px; height: 300px; opacity: 0;}
+        .box7{position: absolute; top: 72vh; left: 25.3vw; width: 200px; height: 300px; opacity: 0;}
+        .box8{position: absolute; top: 76vh; left: 50.3vw; width: 200px; height: 300px; opacity: 0;}
+        .box9{position: absolute; top: 20vh; left: 17vw; width: 200px; height: 300px; opacity: 0;}
+
+        .zzal{ padding: 5px; filter: blur(1px); opacity:0.5; width:200px; }
+
+
+
+
+		/*마우스호버*/
+		.word1:hover ~.box1{opacity: 100; transition:0.8s;}
+		.word2:hover ~.box2{opacity: 100; transition:0.8s;}
+		.word3:hover ~.box3{opacity: 100; transition:0.8s;}
+		.word4:hover ~.box4{opacity: 100; transition:0.8s;}
+		.word5:hover ~.box5{opacity: 100; transition:0.8s;}
+		.word6:hover ~.box6{opacity: 100; transition:0.8s;}
+		.word7:hover ~.box7{opacity: 100; transition:0.8s;}
+		.word8:hover ~.box8{opacity: 100; transition:0.8s;}
+		.word9:hover ~.box9{opacity: 100; transition:0.8s;}
+
+
+		.aaa:hover{
+				  transform: scale(1.2);
+				  -webkit-transform: scale(1.2);
+				  -moz-transform: scale(1.2);
+				  -ms-transform: scale(1.2);
+				  -o-transform: scale(1.2);
+				  transition:0.8s;
+				} 
+		.aaa:hover >.keyword{color: #ffffff; transition:0.8s}
+		.aaa:hover .a-keyword{color: #ffffff; transition:0.8s}
+		.aaa:hover >.twingkleImg-b{ 
+				 opacity: 100;
+				  transform: scale(1.2);
+				  -webkit-transform: scale(1.2);
+				  -moz-transform: scale(1.2);
+				  -ms-transform: scale(1.2);
+				  -o-transform: scale(1.2);
+				  transition:0.8s;
+				}
+		
+/*		.aaa:hover ~ .cursor{scale: 130%; transition:0.8s;
+							}*/
+
+	</style>
+</head>
+<body>
+ <div class="container">
+ 	<img class="BG" src="BGblue.png">
+
+ 	<div class="title">
+ 		<img class="titleImg" src="title.gif">
+ 	</div>
+
+
+ 	<div><a href="index.html" class="nextpage">✦ back ✦</a></div>
+
+ 	<div class="aaa word1">
+ 		<p class="keyword"><a href="life2.html" class="a-keyword">Life</a></p>
+ 		<img class="twingkleImg-a" src="twingkleB2.png">
+ 		<img class="twingkleImg-b" src="twingkleB2.png">
+ 	</div>
+ 	 		<div class="box1">
+ 			<img class="zzal" src="lifeB.png"> 
+ 			</div>
+ 
+
+ 	<div class="aaa word2">
+ 		<p class="keyword"><a href="effort2.html" class="a-keyword">Effort</a></p>
+ 		<img class="twingkleImg-a" src="twingkleB2.png">
+ 		<img class="twingkleImg-b" src="twingkleB2.png">
+ 	</div>
+ 			 <div class="box2">
+ 			<img class="zzal" src="effortB.png">
+ 			</div>
+
+ 	<div class="aaa word3">
+ 		<p class="keyword"><p class="keyword"><a href="friendship2.html" class="a-keyword">Friendship</a></p>
+ 		<img class="twingkleImg-a" src="twingkleB2.png">
+ 		<img class="twingkleImg-b" src="twingkleB2.png">
+ 	</div>
+ 			<div class="box3">
+ 			<img class="zzal" src="FriendB.png">
+ 			</div>
+
+ 	<div class="aaa word4">
+ 		<p class="keyword"><a href="time2.html" class="a-keyword">Time</a></p>
+ 		<img class="twingkleImg-a" src="twingkleB2.png">
+ 		<img class="twingkleImg-b" src="twingkleB2.png">
+ 	</div>
+ 			<div class="box4">
+ 			<img class="zzal" src="timeB.png">
+ 			</div>
+
+  	<div class="aaa word5">
+  		<p class="keyword"><a href="reading2.html" class="a-keyword">Reading</a></p>
+  		<img class="twingkleImg-a" src="twingkleB2.png">
+ 		<img class="twingkleImg-b" src="twingkleB2.png">
+ 	</div>
+ 			<div class="box5">
+ 			<img class="zzal" src="readingB.png">
+ 			</div>
+
+ 	<div class="aaa word6">
+ 		<p class="keyword"><a href="hope2.html" class="a-keyword">Hope</a></p>
+ 		<img class="twingkleImg-a" src="twingkleB2.png">
+ 		<img class="twingkleImg-b" src="twingkleB2.png">
+ 	</div>
+ 			<div class="box6">
+ 			<img class="zzal" src="hopeB.png">
+ 			</div>
+
+ 	<div class="aaa word7">
+ 		<p class="keyword"><a href="success2.html" class="a-keyword">Success</a></p>
+ 		<img class="twingkleImg-a" src="twingkleB2.png">
+ 		<img class="twingkleImg-b" src="twingkleB2.png">
+ 	</div>
+ 			<div class="box7">
+ 			<img class="zzal" src="successB.png">
+ 			</div>
+
+ 	<div class="aaa word8">
+ 		<p class="keyword"><a href="love2.html" class="a-keyword">Love</a></p>
+ 		<img class="twingkleImg-a" src="twingkleB2.png">
+ 		<img class="twingkleImg-b" src="twingkleB2.png">
+ 	</div>
+ 			<div class="box8">
+ 			<img class="zzal" src="loveB.png">
+ 			</div>
+
+
+ 	<div class="aaa word9">
+ 		<p class="keyword"><a href="challenge2.html" class="a-keyword">Challenge</a></p>
+ 		<img class="twingkleImg-a" src="twingkleB2.png">
+ 		<img class="twingkleImg-b" src="twingkleB2.png">
+ 	</div>
+ 			<div class="box9">
+ 				<img class="zzal" src="challengeB.png">
+ 			</div>
+
+ 			<!-- 마우스커서 -->
+ 				<div class="cursor"></div>
+
+ 	<!-- <div class="scroll">
+ 	 <img src="scrolldown.png">
+ 	</div> -->
+ </div>
+
+ 	 
+
+ 	<script type="text/javascript">
+
+ 		window.onclick = function(){history.back();}
+// something.onclick = function(){
+// 	history.back(); //뒤로가기
+// 	window.location.href = "index.html" //홈으로가기
+// }
+
+
+	  let mouseCursor = document.querySelector(".cursor");
+	  window.addEventListener("mousemove", cursor);
+	  function cursor(e) {
+	    mouseCursor.style.left = e.pageX + "px";
+	    mouseCursor.style.top = e.pageY + "px";
+	}
+	</script>
+
+</body>
+</html>

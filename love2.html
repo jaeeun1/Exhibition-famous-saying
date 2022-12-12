@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>love</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,800&family=Roboto+Mono:wght@400;700&display=swap');
+
+		body{margin: 0; cursor: none; background-color: black;}
+
+		a{text-decoration: none; color:#ffffff;}
+		.cursor {
+	      width: 8rem;
+	      height: 8rem;
+	      border: 2px solid var(--color-texta);
+	      border-radius: 50%;
+	      position: absolute;
+	      z-index: 1000;
+	      transform: translate(-50%, -50%);
+	      pointer-events: none;
+	      transition: all 0.3s ease;
+	      transition-property: background, transform;
+	      transform-origin: 100% 100%;
+ 		  backdrop-filter: brightness(1.2) blur(2px);
+	      background-size: cover;
+	  		}
+
+		.backBTN{position: fixed; padding: 50px; font-family: 'Roboto Mono', monospace; font-size: 25px;
+			border: 0; outline: 0; background-color: transparent;
+		 color: white; z-index: 9999; }
+		.leftBTN{position: fixed; font-family: 'Roboto Mono', monospace; font-size: 50px;
+			border: 0; outline: 0; background-color: transparent;
+		 color: white; z-index: 9999; left: 100px; top: 45%; }
+		.rightBTN{position: fixed; font-family: 'Roboto Mono', monospace; font-size: 50px;
+			border: 0; outline: 0; background-color: transparent;
+		 color: white; z-index: 9999; right: 100px; top: 45%;  }
+		 
+		.cursor {
+	      width: 8rem;
+	      height: 8rem;
+	      border: 2px solid var(--color-texta);
+	      border-radius: 50%;
+	      position: absolute;
+	      z-index: 1000;
+	      transform: translate(-50%, -50%);
+	      pointer-events: none;
+	      transition: all 0.3s ease;
+	      transition-property: background, transform;
+	      transform-origin: 100% 100%;
+ 		  backdrop-filter: brightness(1.2) blur(2px);
+	      background-size: cover;
+	  		}
+	
+
+		.container{position: relative; width: 100vw; height: 100vh;}
+		.BG{position: absolute; width: 100vw; height: 100vh; z-index: -2;}
+		.title{height: 20vw; transform: translate(-50%,-50%);
+                        position: absolute; left: 50%; top: 50%;
+                        display: flex; z-index: -2;}
+		.titleImg{transform: translate(-50%. -50%); }
+
+
+/*		.aaa{transform:scale(1.2);}*/
+
+		.word2{position: absolute; top: 69vh; left: 45vw; width: 5.3vw; height: 7vh;}
+
+		.keyword{transform: translate(-50%. -50%); position: absolute; color: #ffffff; margin:0; font-family: 'Roboto Mono', monospace; font-weight: 700; font-size: 20px;}
+		.twingkleImg-a{transform: translate(50%. -50%); position: absolute; margin:0; bottom: 0; right: 0; opacity: 0;}
+		.twingkleImg-b{transform: translate(50%. -50%); position: absolute; margin:0; bottom: 0; right: 0; }
+		/*.scroll{height: 3vw; transform: translate(-50%,-50%);
+                        position: absolute; left: 50%; bottom: 0;
+                        display: flex;}*/
+
+		.box2{position: absolute; top: 76vh; left: 50.3vw; width: 200px; height: 300px; }
+		.person1{position: absolute; width: 200px; top: -0.5vh; left: -0.5vw; z-index: -1;}
+
+		.box2-2{position: absolute; top: 100vh; left: 19vw; width: 200px; height: 300px;
+				color: white; }
+		.person2{position: absolute; width: 350px; top: -0.5vh; left: -0.5vw; z-index: -1;}
+
+		.box2-3{position: absolute; top: 100vh; left: 37vw; width: 200px; height: 300px;
+				color: white; }
+		.person3{position: absolute; width: 350px; top: -0.5vh; left: -0.5vw; z-index: -1;}
+
+		.box2-4{position: absolute; top: 100vh; left: 76vw; width: 200px; height: 300px;
+				color: white; }
+		.person4{position: absolute; width: 350px; top: -0.5vh; left: -0.5vw; z-index: -1;}
+
+
+
+		.textinbox{color: white; padding-right: 10px; margin:0; font-family: 'Roboto Mono', monospace; font-size: 20px; font-weight: lighter; z-index:999;}
+
+/*		 배경투명도*/
+		.BG{opacity: 1; animation: BGfadein 2s forwards; }
+		@keyframes BGfadein{to{opacity: .3;}}
+		.title{opacity: .3; animation: titlefadein 2s infinite forwards; }
+		@keyframes titlefadein{
+						0%{opacity: .1;}
+						50%{opacity: .3;}
+						100%{opacity: .1;}
+						}
+		
+
+		.showbox1{opacity: 0.3; animation: fadeout 3s forwards; color: white;}
+		@keyframes fadeout{to{opacity:1;}}
+
+		.showbox2{animation-name: goup2; animation-duration:3s; 
+  		animation-direction:alternate; animation-fill-mode: forwards; animation-delay: 1s;}
+  		@keyframes goup2{ 
+  						0%{top: 100vh; opacity: 0;}
+  						100%{top: 40vh; opacity: 1;}
+  						}
+		.showbox3{animation-name: goup3; animation-duration:3s;
+  		animation-direction:alternate; animation-fill-mode: forwards; animation-delay: 1s;}
+  		@keyframes goup3{ 
+  						0%{top: 100vh; opacity: 0;}
+  						100%{top: 10vh; opacity: 1;}
+  						}
+  		.showbox4{animation-name: goup4; animation-duration:3s;
+  		animation-direction:alternate; animation-fill-mode: forwards; animation-delay: 1s;}
+  		@keyframes goup4{ 
+  						0%{top: 100vh; opacity: 0;}
+  						100%{top: 50vh; opacity: 1;}
+  						}
+
+
+	</style>
+</head>
+
+<body>
+	<button class="backBTN" id="BACK">✦HOME</button>
+	<button class="leftBTN" id="LEFT"><a href="success2.html">◀︎</a></button>
+	<button class="rightBTN" id="RIGHT"><a href="time2.html">▶︎</a></button>
+	<div class="container">
+ 		<img class="BG" src="BGblue.png">
+ 			<div class="title">
+ 				<img class="titleImg" src="title.gif">
+ 			</div>
+
+ 		 	<div class="aaa word2">
+ 				<p class="keyword">Love</p>
+ 				<img class="twingkleImg-a" src="twingkleA.png">
+ 				<img class="twingkleImg-b" src="twingkleB.png">
+ 			</div>
+ 			<div class="box2 showbox1">
+ 				<img class="person1" src="love.png">
+ 			</div>
+
+
+ 			<div class="box2-2 showbox2">
+ 				<img class="person2" src="love1.png">
+ 			</div>
+
+
+ 			<div class="box2-3 showbox3">
+ 				<img class="person3" src="love2.png">
+ 			</div>
+
+ 			<div class="box2-4 showbox4">
+ 				<img class="person3" src="love3.png">
+ 			</div>
+
+					<!-- 마우스커서 -->
+					 <div class="cursor">
+					 </div>
+
+					<!--  	<div class="scroll">
+					 	 <img src="scrolldown.png">
+					 	</div> -->
+ 	</div>
+
+ 	 
+
+ 	<script type="text/javascript">
+
+	  let mouseCursor = document.querySelector(".cursor");
+	  window.addEventListener("mousemove", cursor);
+	  function cursor(e) {
+	    mouseCursor.style.left = e.pageX + "px";
+	    mouseCursor.style.top = e.pageY + "px";
+	}
+
+
+	BACK.onclick = function(){
+		window.location.href = "index2.html"
+	}
+
+	</script>
+
+</body>
+</html>
